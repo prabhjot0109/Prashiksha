@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Prashiksha</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Shorts</string>
-    <string name="title_notifications">Reel</string>
+    <string name="title_bits">Bits</string>
+    <string name="title_cult">Cult</string>
+    <string name="title_fix">Fix</string>
+    <string name="title_resources">Resources</string>
 </resources>
