@@ -64,7 +64,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                 currentPlayer = new SimpleExoPlayer.Builder(recyclerView.getContext()).build();
                 videoViewHolder.playerView.setPlayer(currentPlayer);
 
-                Uri videoUri = Uri.parse(videoList.get(position).getVideoUrl());
+                Uri videoUri = Uri.parse("android.resource://" + recyclerView.getContext().getPackageName() + "/" + videoList.get(position).getResourceId());
                 MediaItem mediaItem = MediaItem.fromUri(videoUri);
                 currentPlayer.setMediaItem(mediaItem);
                 currentPlayer.prepare();
