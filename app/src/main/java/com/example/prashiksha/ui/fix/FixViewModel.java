@@ -10,7 +10,7 @@ public class FixViewModel extends ViewModel {
 
     public FixViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is Fix fragment.");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {

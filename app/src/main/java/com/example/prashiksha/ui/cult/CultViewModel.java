@@ -10,7 +10,7 @@ public class CultViewModel extends ViewModel {
 
     public CultViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is cult fragment");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {
