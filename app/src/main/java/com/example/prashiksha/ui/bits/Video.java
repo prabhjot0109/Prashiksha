@@ -1,17 +1,17 @@
 package com.example.prashiksha.ui.bits;
 
 public class Video {
-    private int resourceId;
+    private String videoUrl;
 
-    public Video(int resourceId) {
-        this.resourceId = resourceId;
+    public Video(String videoUrl) {
+        this.videoUrl = videoUrl;
     }
 
-    public int getResourceId() {
-        return resourceId;
+    public String getVideoUrl() {
+        return videoUrl;
     }
 
-    public void setResourceId(int resourceId) {
-        this.resourceId = resourceId;
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
     }
 }

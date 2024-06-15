@@ -39,9 +39,9 @@ public class BitsFragment extends Fragment {
 
         // Sample data for videos
         videoList = new ArrayList<>();
-        videoList.add(new Video(R.raw.video1));
-        videoList.add(new Video(R.raw.video2));
-        videoList.add(new Video(R.raw.video3));
+        videoList.add(new Video("https://www.youtube.com/shorts/nwaFReaoU0s"));
+        videoList.add(new Video("https://www.youtube.com/shorts/SDuQXckfST4"));
+        videoList.add(new Video("https://www.youtube.com/shorts/nW0l8wp8QX4"));
 
         videoAdapter = new VideoAdapter(videoList);
         recyclerView.setAdapter(videoAdapter);
