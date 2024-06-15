@@ -45,9 +45,13 @@ dependencies {
     implementation(libs.navigation.ui)
     implementation(libs.media3.common)
     implementation(libs.activity)
+    implementation(libs.annotation)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation (libs.exoplayer)
     implementation(libs.lottie)
+    implementation(libs.material.v1120)
+    implementation(libs.appcompat.v170)
+    implementation(libs.play.services.auth)
 }
