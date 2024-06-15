@@ -9,8 +9,6 @@
         android:id="@+id/navigation_home"
         android:name="com.example.prashiksha.ui.home.HomeFragment"
         android:fontFamily="@font/harabara"
-        android:textSize="40sp"
-        android:textStyle="bold"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home" />
 

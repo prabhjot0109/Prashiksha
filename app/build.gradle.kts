@@ -50,4 +50,5 @@ dependencies {
     implementation (libs.exoplayer)
 
 
+    implementation(libs.lottie)
 }

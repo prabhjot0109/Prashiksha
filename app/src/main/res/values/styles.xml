@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="BottomNavigationView.TextAppearance.Active" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="android:fontFamily">@font/ancillary_bold</item>
         <item name="android:textColor">#f68712</item>
     </style>
 
     <style name="BottomNavigationView.TextAppearance.Inactive" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="android:fontFamily">@font/bifocals</item>
         <item name="android:textColor">@color/colorOnPrimary</item>
     </style>
 

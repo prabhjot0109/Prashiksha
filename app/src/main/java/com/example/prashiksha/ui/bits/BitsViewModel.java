@@ -10,7 +10,7 @@ public class BitsViewModel extends ViewModel {
 
     public BitsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is bits fragment.");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {
