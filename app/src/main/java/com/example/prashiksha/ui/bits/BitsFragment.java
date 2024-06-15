@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.prashiksha.R;
@@ -22,6 +23,7 @@ public class BitsFragment extends Fragment {
     private FragmentBitsBinding binding;
     private VideoAdapter videoAdapter;
     private List<Video> videoList;
+    private RecyclerView recyclerView;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -32,8 +34,7 @@ public class BitsFragment extends Fragment {
         binding = FragmentBitsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        // Initialize the RecyclerView
-        RecyclerView recyclerView = binding.recyclerView;
+        recyclerView = binding.recyclerView;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
         // Sample data for videos
@@ -42,9 +43,24 @@ public class BitsFragment extends Fragment {
         videoList.add(new Video(R.raw.video2));
         videoList.add(new Video(R.raw.video3));
 
-        // Initialize the adapter and set it to the RecyclerView
         videoAdapter = new VideoAdapter(videoList);
         recyclerView.setAdapter(videoAdapter);
+
+        // Set up PagerSnapHelper for snapping behavior
+        PagerSnapHelper pagerSnapHelper = new PagerSnapHelper();
+        pagerSnapHelper.attachToRecyclerView(recyclerView);
+
+        // Add scroll listener to manage video playback
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    int position = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
+                    videoAdapter.playVideoAtPosition(recyclerView, position);
+                }
+            }
+        });
 
         return root;
     }
@@ -52,6 +68,7 @@ public class BitsFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        videoAdapter.releasePlayer();
         binding = null;
     }
 }

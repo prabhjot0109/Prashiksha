@@ -5,12 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import com.google.android.exoplayer2.MediaItem;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.prashiksha.R;
+import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.ui.PlayerView;
 
@@ -19,6 +19,7 @@ import java.util.List;
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder> {
 
     private List<Video> videoList;
+    private SimpleExoPlayer currentPlayer;
 
     public VideoAdapter(List<Video> videoList) {
         this.videoList = videoList;
@@ -42,6 +43,36 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         return videoList.size();
     }
 
+    public void releasePlayer() {
+        if (currentPlayer != null) {
+            currentPlayer.release();
+            currentPlayer = null;
+        }
+    }
+
+    public void playVideoAtPosition(RecyclerView recyclerView, int position) {
+        if (position >= 0 && position < videoList.size()) {
+            // Release any previous player
+            releasePlayer();
+
+            // Get the ViewHolder at the specified position
+            RecyclerView.ViewHolder viewHolder = recyclerView.findViewHolderForAdapterPosition(position);
+            if (viewHolder instanceof VideoViewHolder) {
+                VideoViewHolder videoViewHolder = (VideoViewHolder) viewHolder;
+
+                // Initialize ExoPlayer for the new position
+                currentPlayer = new SimpleExoPlayer.Builder(recyclerView.getContext()).build();
+                videoViewHolder.playerView.setPlayer(currentPlayer);
+
+                Uri videoUri = Uri.parse("android.resource://" + recyclerView.getContext().getPackageName() + "/" + videoList.get(position).getResourceId());
+                MediaItem mediaItem = MediaItem.fromUri(videoUri);
+                currentPlayer.setMediaItem(mediaItem);
+                currentPlayer.prepare();
+                currentPlayer.play();
+            }
+        }
+    }
+
     public static class VideoViewHolder extends RecyclerView.ViewHolder {
 
         private PlayerView playerView;
@@ -56,37 +87,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         }
 
         public void bind(Video video) {
-            // Initialize ExoPlayer and set the video resource ID
-            SimpleExoPlayer player = new SimpleExoPlayer.Builder(itemView.getContext()).build();
-            playerView.setPlayer(player);
-
-            // Create a URI for the video resource
-            Uri videoUri = Uri.parse("android.resource://" + itemView.getContext().getPackageName() + "/" + video.getResourceId());
-
-            // Create a MediaItem for the video URI
-            MediaItem mediaItem = MediaItem.fromUri(videoUri);
-
-            // Set the media item to the player
-            player.setMediaItem(mediaItem);
-
-            // Prepare the player
-            player.prepare();
-
-            // Start playback
-            player.play();
-
-            // Set click listeners for like, comment, and share
-            btnLike.setOnClickListener(v -> {
-                // Handle like action
-            });
-
-            btnComment.setOnClickListener(v -> {
-                // Handle comment action
-            });
-
-            btnShare.setOnClickListener(v -> {
-                // Handle share action
-            });
+            // No need to initialize the player here
         }
     }
 }
