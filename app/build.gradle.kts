@@ -48,6 +48,5 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation (libs.exoplayer)
-
     implementation(libs.lottie)
 }
