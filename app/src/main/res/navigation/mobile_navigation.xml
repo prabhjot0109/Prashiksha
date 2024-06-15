@@ -8,30 +8,37 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.prashiksha.ui.home.HomeFragment"
+        android:fontFamily="@font/harabara"
+        android:textSize="40sp"
+        android:textStyle="bold"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_bits"
         android:name="com.example.prashiksha.ui.bits.BitsFragment"
+        android:fontFamily="@font/harabara"
         android:label="@string/title_bits"
         tools:layout="@layout/fragment_bits" />
 
     <fragment
         android:id="@+id/navigation_cult"
         android:name="com.example.prashiksha.ui.cult.CultFragment"
+        android:fontFamily="@font/harabara"
         android:label="@string/title_cult"
         tools:layout="@layout/fragment_cult" />
 
     <fragment
         android:id="@+id/navigation_fix"
         android:name="com.example.prashiksha.ui.fix.FixFragment"
+        android:fontFamily="@font/harabara"
         android:label="@string/title_fix"
         tools:layout="@layout/fragment_fix" />
 
     <fragment
         android:id="@+id/navigation_resources"
         android:name="com.example.prashiksha.ui.resources.ResourcesFragment"
+        android:fontFamily="@font/harabara"
         android:label="@string/title_resources"
         tools:layout="@layout/fragment_resources" />
 </navigation>
