@@ -1,6 +1,8 @@
 package com.example.prashiksha;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -14,24 +16,25 @@ import com.example.prashiksha.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        findViewById(R.id.button_interface1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, com.example.prashiksha.Interface1Activity.class);
+                startActivity(intent);
+            }
+        });
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_bits, R.id.navigation_cult, R.id.navigation_resources, R.id.navigation_fix)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        findViewById(R.id.button_interface2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, com.example.prashiksha.Interface2Activity.class);
+                startActivity(intent);
+            }
+        });
     }
-
 }
