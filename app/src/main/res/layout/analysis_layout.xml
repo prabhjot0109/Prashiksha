@@ -20,6 +20,7 @@
         app:menu="@menu/bottom_nav_menu2"/>
 
     <LinearLayout
+        android:theme="@style/Theme.Prashiksha"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
@@ -61,7 +62,7 @@
             android:text="Your Personality Type: "
             android:layout_marginBottom="32dp" />
 
-        <Button
+        <com.example.prashiksha.CustomButton
             android:id="@+id/finishButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
