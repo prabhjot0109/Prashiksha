@@ -1,0 +1,13 @@
+package com.example.prashiksha;
+
+public enum PersonalityType {
+    ANALYTICAL_THINKER,
+    DETAIL_ORIENTED_LEARNER,
+    VISUAL_SPATIAL_LEARNER,
+    FAST_LEARNER,
+    METHODICAL_LEARNER,
+    HOLISTIC_LEARNER,
+    INTUITIVE_LEARNER,
+    UNKNOWN, REFLECTIVE_LEARNER
+
+}
