@@ -4,27 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.cult.CultFragment">
+    tools:context=".ui.cult.CultFragment2">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/gifsr"
+        android:id="@+id/gifsr3"
         android:layout_width="316dp"
         android:layout_height="280dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="28dp"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/text_cult"
+        app:layout_constraintBottom_toTopOf="@+id/text_cult2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/ai_alternatives_animation">
-
+        android:rotation="90"
+        app:lottie_rawRes="@raw/ai_text_animation">
     </com.airbnb.lottie.LottieAnimationView>
 
     <TextView
-        android:id="@+id/text_cult"
+        android:id="@+id/text_cult2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -36,6 +38,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,27 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.cult.CultFragment">
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/gifsr"
-        android:layout_width="316dp"
-        android:layout_height="280dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/text_cult"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/ai_alternatives_animation">
-
-    </com.airbnb.lottie.LottieAnimationView>
+    tools:context=".ui.fix.FixFragment2">
 
     <TextView
-        android:id="@+id/text_cult"
+        android:id="@+id/text_fix2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -36,6 +19,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
