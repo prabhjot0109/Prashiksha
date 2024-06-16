@@ -1,19 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="top"
+    android:orientation="vertical">
 
-    <Button
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bifocals"
+        android:text="@string/age_verification"
+        android:textAlignment="center"
+        android:textColor="@color/colorOnPrimary"
+        android:textColorHint="@color/colorOnPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/gifsr"
+        android:layout_width="320dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/ai_lines_animation"
+        tools:layout_editor_absoluteY="352dp" />
+
+    <com.example.prashiksha.CustomButton
         android:id="@+id/button_interface1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open Interface 1" />
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/age_above_18"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="40dp" />
 
-    <Button
+    <com.example.prashiksha.CustomButton
         android:id="@+id/button_interface2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open Interface 2" />
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/age_below_18" />
 </LinearLayout>

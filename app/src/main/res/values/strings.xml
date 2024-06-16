@@ -25,4 +25,7 @@
     <string name="action_sign_in_short">Sign In</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign In</string>
+    <string name="age_above_18">I am above 18 years of age.</string>
+    <string name="age_below_18">I am below 18 years of age.</string>
+    <string name="age_verification">Age Verification is done to cater content as per individual goals and interests.</string>
 </resources>
